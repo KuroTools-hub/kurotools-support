@@ -1,0 +1,63 @@
+name: 不具合報告 / Bug report
+description: PDF.Flatten.Optimizerの問題を報告します
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        この報告内容は公開されます。
+        機密PDF、個人情報、顧客情報、秘密のファイル名を投稿しないでください。
+
+        This report is public.
+        Do not post confidential PDFs, personal information, customer data, or sensitive filenames.
+
+  - type: input
+    id: app-version
+    attributes:
+      label: アプリのバージョン / App version
+      placeholder: "例 / Example: 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windowsのバージョン / Windows version
+      placeholder: "例 / Example: Windows 11 24H2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: settings
+    attributes:
+      label: モードと設定 / Mode and settings
+      description: A～Dの処理モード、圧縮レベル、色、DPIなど
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 問題と再現手順 / Problem and reproduction steps
+      description: 期待した結果と実際の結果を記載してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: エラーメッセージ / Error message
+      description: 機密部分を伏せて貼り付けてください。
+      render: text
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 公開情報の確認 / Public information check
+      options:
+        - label: 機密PDF、個人情報、顧客情報を含めていません。
+          required: true
+        - label: 元のPDFが上書きされていないことを確認しました。
+          required: true
